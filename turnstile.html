@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://challenges.cloudflare.com; style-src 'unsafe-inline'; frame-src https://challenges.cloudflare.com; connect-src https://challenges.cloudflare.com; img-src data: https://challenges.cloudflare.com">
+  <title>온음 사람 확인</title>
+  <style>
+    html, body { margin: 0; min-height: 100%; background: transparent; color: #4b3c36; font: 14px system-ui, sans-serif; }
+    main { min-height: 96px; display: grid; place-items: center; padding: 6px; box-sizing: border-box; }
+    #widget { width: min(100%, 360px); min-height: 65px; }
+    #status { margin: 4px 0 0; text-align: center; font-size: 12px; }
+    .error { color: #b42318; }
+  </style>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const siteKey = params.get('sitekey') || '';
+    const rawParentOrigin = params.get('parent_origin') || '';
+    let parentOrigin = '*';
+
+    try {
+      const parsed = new URL(rawParentOrigin);
+      if (parsed.protocol === 'http:' || parsed.protocol === 'https:') parentOrigin = parsed.origin;
+    } catch {}
+
+    function send(type, detail) {
+      const payload = JSON.stringify({ source: 'daytone-turnstile', type, ...detail });
+      if (window.ReactNativeWebView?.postMessage) window.ReactNativeWebView.postMessage(payload);
+      if (window.parent !== window) window.parent.postMessage(payload, parentOrigin);
+    }
+
+    function showError(code) {
+      const status = document.getElementById('status');
+      status.className = 'error';
+      status.textContent = '사람 확인을 불러오지 못했어요. 다시 시도해 주세요.';
+      send('error', { code: String(code || 'TURNSTILE_UNKNOWN') });
+    }
+
+    window.renderTurnstile = function renderTurnstile() {
+      if (!/^[A-Za-z0-9_-]{10,100}$/.test(siteKey) || !window.turnstile) {
+        showError('TURNSTILE_CONFIG_INVALID');
+        return;
+      }
+
+      window.turnstile.render('#widget', {
+        sitekey: siteKey,
+        action: 'email_otp',
+        theme: 'auto',
+        language: 'ko',
+        size: 'flexible',
+        appearance: 'interaction-only',
+        retry: 'auto',
+        'refresh-expired': 'auto',
+        callback: function (token) {
+          document.getElementById('status').textContent = '확인됐어요.';
+          send('token', { token });
+        },
+        'expired-callback': function () {
+          document.getElementById('status').textContent = '확인 시간이 지나 다시 확인하고 있어요.';
+          send('expired', {});
+        },
+        'timeout-callback': function () {
+          document.getElementById('status').textContent = '확인 시간이 지나 다시 시도하고 있어요.';
+          send('expired', {});
+        },
+        'error-callback': function (code) {
+          showError(code);
+          return true;
+        }
+      });
+      send('ready', {});
+    };
+  </script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=renderTurnstile&amp;render=explicit" async defer></script>
+</head>
+<body>
+  <main>
+    <div>
+      <div id="widget"></div>
+      <p id="status">사람인지 확인하고 있어요.</p>
+    </div>
+  </main>
+</body>
+</html>
