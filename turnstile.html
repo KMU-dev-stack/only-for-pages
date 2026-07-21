@@ -15,18 +15,11 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const siteKey = params.get('sitekey') || '';
-    const rawParentOrigin = params.get('parent_origin') || '';
-    let parentOrigin = '*';
-
-    try {
-      const parsed = new URL(rawParentOrigin);
-      if (parsed.protocol === 'http:' || parsed.protocol === 'https:') parentOrigin = parsed.origin;
-    } catch {}
+    let challengeStarted = false;
 
     function send(type, detail) {
       const payload = JSON.stringify({ source: 'daytone-turnstile', type, ...detail });
       if (window.ReactNativeWebView?.postMessage) window.ReactNativeWebView.postMessage(payload);
-      if (window.parent !== window) window.parent.postMessage(payload, parentOrigin);
     }
 
     function showError(code) {
@@ -37,6 +30,12 @@
     }
 
     window.renderTurnstile = function renderTurnstile() {
+      challengeStarted = true;
+      clearTimeout(startupTimer);
+      if (window.parent !== window) {
+        showError('TURNSTILE_EMBED_NOT_ALLOWED');
+        return;
+      }
       if (!/^[A-Za-z0-9_-]{10,100}$/.test(siteKey) || !window.turnstile) {
         showError('TURNSTILE_CONFIG_INVALID');
         return;
@@ -70,8 +69,12 @@
       });
       send('ready', {});
     };
+
+    const startupTimer = setTimeout(function () {
+      if (!challengeStarted) showError('TURNSTILE_LOAD_TIMEOUT');
+    }, 15000);
   </script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=renderTurnstile&amp;render=explicit" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=renderTurnstile&amp;render=explicit" async defer onerror="showError('TURNSTILE_SCRIPT_LOAD_FAILED')"></script>
 </head>
 <body>
   <main>
