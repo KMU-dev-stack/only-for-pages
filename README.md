@@ -4,4 +4,4 @@
 
 | 서비스 | 개인정보방침 | 이용약관 |
 |--------|-------------|---------|
-| 온음 (Daytone) | [privacy.html](https://kmu-dev-stack.github.io/only-for-pages/privacy.html) | [terms.html](https://kmu-dev-stack.github.io/only-for-pages/terms.html) |
+| 온음 (Daytone) | [privacy.html](https://kmu-dev-stack.github.io/only-for-pages/privacy.html) | [terms.html](https://kmu-dev-stack.github.io/only-for-pages/terms.html), [계정 삭제](https://kmu-dev-stack.github.io/only-for-pages/delete-account.html) |
