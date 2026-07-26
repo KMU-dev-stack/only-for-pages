@@ -1,7 +1,13 @@
-# Only for Pages
+﻿# KMU Dev Stack Public Pages
 
-다중 서비스의 공개 문서/약관/방침 페이지를 호스팅하는 GitHub Pages 저장소.
+????μ냼??**?⑥쓬 (Daytone)** 諛?KMU Dev Stack ?꾨줈?앺듃??怨듦컻 ?쎄?, 媛쒖씤?뺣낫 泥섎━諛⑹묠, 洹몃━怨?理쒖떊 QA APK 諛고룷??怨듦컻 ??μ냼?낅땲??
 
-| 서비스 | 개인정보방침 | 이용약관 |
-|--------|-------------|---------|
-| 온음 (Daytone) | [privacy.html](https://kmu-dev-stack.github.io/only-for-pages/privacy.html) | [terms.html](https://kmu-dev-stack.github.io/only-for-pages/terms.html), [계정 삭제](https://kmu-dev-stack.github.io/only-for-pages/delete-account.html) |
+## ?벑 ?⑥쓬 (Daytone) QA ?ㅼ슫濡쒕뱶 諛??쒕퉬???덈궡
+
+- ?벑 **?⑥쓬 QA 理쒖떊 APK 吏곸젒 ?ㅼ슫濡쒕뱶**: [daytone-auth-qa-release.apk](https://kmu-dev-stack.github.io/only-for-pages/daytone-auth-qa-release.apk)
+- ?뱶 **?댁슜?쎄?**: [index.html](https://kmu-dev-stack.github.io/only-for-pages/)
+- ?뱞 **媛쒖씤?뺣낫 泥섎━諛⑹묠**: [privacy.html](https://kmu-dev-stack.github.io/only-for-pages/privacy.html)
+- ??**?뚯썝 ?덊눜 諛??곗씠????젣 ?덈궡**: [delete-account.html](https://kmu-dev-stack.github.io/only-for-pages/delete-account.html)
+
+---
+留덉?留??낅뜲?댄듃: 2026-07-26
