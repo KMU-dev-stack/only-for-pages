@@ -3,11 +3,11 @@
     "version":  "1.0.0",
     "version_code":  "1",
     "source_package_version":  "1.0.0",
-    "commit":  "dc2306d114ad",
-    "source_dirty":  true,
-    "sha256":  "3C95C39BA5C3A0E684E9A64687234DB3532EFC89DD8B03D04560B9B954E4850F",
+    "commit":  "6e35f46a8c2b",
+    "source_dirty":  false,
+    "sha256":  "1C1F2EE9947437ACAE65194C3FB242D15B98688F0F35B1172C424437F417AE07",
     "bytes":  45853085,
-    "built_at_utc":  "2026-07-28T00:03:15.7912272Z",
+    "built_at_utc":  "2026-07-28T05:04:26.8845588Z",
     "app_mode":  "local-qa",
     "build_variant":  "internal-qa",
     "captcha_requirement":  "optional",
@@ -15,8 +15,7 @@
     "architecture":  "arm64-v8a",
     "package_name":  "com.daytone.app.qa",
     "signer_certificate_sha256":  "FAC61745DC0903786FB9EDE62A962B399F7348F0BB6F899B8332667591033B9C",
-    "bundle_input_sha256":  "292E3F1996EC09A0402AA45B21A3FB193BC363571870D0BFFCD1F538964C4C8A",
+    "bundle_input_sha256":  "72F5A56450A467E19E744384B51D26A15C3BA9D724039ADF673F036780513686",
     "runtime_contents_scan":  "passed",
-    "embedded_secret_scan":  "passed",
-    "google_drive_copy_verified":  false
+    "embedded_secret_scan":  "passed"
 }
