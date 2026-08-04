@@ -1,0 +1,23 @@
+﻿{
+    "artifact":  "daytone-auth-qa-release.apk",
+    "version":  "1.0.0",
+    "version_code":  "2",
+    "source_package_version":  "1.0.0",
+    "commit":  "f4d0861e073d",
+    "source_dirty":  false,
+    "sha256":  "34FC78385FB8F02C04CFA9FFA6BEF5F8944E11F64925EF7B029E9653586CDB19",
+    "bytes":  45851369,
+    "built_at_utc":  "2026-08-04T01:30:06.8669010Z",
+    "app_mode":  "authenticated",
+    "build_variant":  "internal-qa",
+    "build_location":  "project",
+    "node_version":  "v22.23.1",
+    "captcha_requirement":  "required",
+    "apk_variant":  "release",
+    "architecture":  "arm64-v8a",
+    "package_name":  "com.daytone.app.qa",
+    "signer_certificate_sha256":  "FAC61745DC0903786FB9EDE62A962B399F7348F0BB6F899B8332667591033B9C",
+    "bundle_input_sha256":  "0EDFF3726B848F60FAF7AF868E52D5CE85FC61BF4DB7A8D771F08B8ED70C59FC",
+    "runtime_contents_scan":  "passed",
+    "embedded_secret_scan":  "passed"
+}

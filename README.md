@@ -5,7 +5,7 @@
 | 파일 | 용도 | 직접 링크 |
 |---|---|---|
 | `daytone-qa-release.apk` | 서버 없는 설치·첫 실행 확인판 (Android 빌드 2) | [local-qa APK](https://kmu-dev-stack.github.io/only-for-pages/daytone-qa-release.apk?v=2) |
-| `daytone-auth-qa-release.apk` | CAPTCHA 포함 test 서버 연결 인증 기능 QA | [authenticated APK](https://kmu-dev-stack.github.io/only-for-pages/daytone-auth-qa-release.apk?v=2) |
+| `daytone-auth-qa-release.apk` | CAPTCHA 포함 test 서버 연결 인증 기능 QA | [authenticated APK](https://kmu-dev-stack.github.io/only-for-pages/daytone-auth-qa-release.apk?v=3) |
 
 두 APK는 같은 `com.daytone.app.qa` 패키지를 사용하므로 한 기기에 함께 설치할 수 없습니다. 나중에 설치한 판이 앞선 판을 덮어쓰며 저장값과 권한이 이어질 수 있습니다.
 
