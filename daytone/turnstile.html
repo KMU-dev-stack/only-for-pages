@@ -19,6 +19,7 @@
     const params = new URLSearchParams(window.location.search);
     const siteKey = params.get('sitekey') || '';
     let challengeStarted = false;
+    const apiWaitDeadline = Date.now() + 10000;
 
     function send(type, detail) {
       const payload = JSON.stringify({ source: 'daytone-turnstile', type, ...detail });
@@ -39,8 +40,18 @@
         showError('TURNSTILE_EMBED_NOT_ALLOWED');
         return;
       }
-      if (!/^[A-Za-z0-9_-]{10,100}$/.test(siteKey) || !window.turnstile) {
+      if (!/^[A-Za-z0-9_-]{10,100}$/.test(siteKey)) {
         showError('TURNSTILE_CONFIG_INVALID');
+        return;
+      }
+      // Android WebView may invoke the API onload callback just before it exposes
+      // window.turnstile.  Wait briefly instead of misreporting that race as a bad key.
+      if (!window.turnstile) {
+        if (Date.now() < apiWaitDeadline) {
+          setTimeout(window.renderTurnstile, 50);
+          return;
+        }
+        showError('TURNSTILE_API_UNAVAILABLE');
         return;
       }
 
