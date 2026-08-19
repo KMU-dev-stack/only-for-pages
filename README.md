@@ -11,7 +11,7 @@
 | 서비스 | 폴더 | 게시 내용 |
 |---|---|---|
 | 온음 (Daytone) | [`daytone/`](https://kmu-dev-stack.github.io/only-for-pages/daytone/) | 이용약관, 개인정보처리방침, 계정 삭제 안내, 보호 페이지, Android QA APK |
-| 메이플 에코 : 블록 매치 퍼즐 | [`mapleeco/`](https://kmu-dev-stack.github.io/only-for-pages/mapleeco/) | 유료 상품 안내 및 청약철회(환불) 기준 |
+| 메이플 에코 : 블록 매치 퍼즐 | [`mapleeco/`](https://kmu-dev-stack.github.io/only-for-pages/mapleeco/) | 유료 상품 안내 및 청약철회(환불) 기준, 월드 운영정책 |
 
 ## 온음 (Daytone)
 
@@ -41,6 +41,7 @@
 | 문서 | 링크 |
 |---|---|
 | 유료 상품 안내 및 청약철회(환불) 기준 | [보기](https://kmu-dev-stack.github.io/only-for-pages/mapleeco/purchase-notice.html) |
+| 월드 운영정책 | [보기](https://kmu-dev-stack.github.io/only-for-pages/mapleeco/world-policy.html) |
 
 ## 게시 규칙
 
