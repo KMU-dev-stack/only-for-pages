@@ -27,14 +27,14 @@
 
 | 상태 | 파일 | 갱신 시각 (KST) | 용도 | 다운로드·정보 |
 |---|---|---|---|---|
-| **현재 기능 QA 권장** | `daytone/daytone-auth-qa-release.apk` | **2026-08-21 18:00** | CAPTCHA와 test 서버를 사용하는 로그인·방·녹음·공유 기능 QA | [APK 받기](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-auth-qa-release.apk?v=3af5e68) · [빌드 정보](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-auth-qa-release.apk.build.json) |
+| **현재 기능 QA 권장** | `daytone/daytone-auth-qa-release.apk` | **2026-08-22 22:22** | CAPTCHA와 test 서버를 사용하는 로그인·방·녹음·공유 기능 QA | [APK 받기](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-auth-qa-release.apk?v=f4ae003) · [빌드 정보](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-auth-qa-release.apk.build.json) |
 | 설치 확인 전용 | `daytone/daytone-qa-release.apk` | 2026-08-18 12:28 | 서버 없이 설치·첫 실행만 확인. 방 만들기·핀 입장 버튼은 표시하지 않음 | [APK 받기](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-qa-release.apk?v=bd3270f) · [빌드 정보](https://kmu-dev-stack.github.io/only-for-pages/daytone/daytone-qa-release.apk.build.json) |
 
 실제 기능을 시험할 때는 **현재 기능 QA 권장** 행의 `authenticated` APK를 사용합니다. `local-qa`는 로그인·방·녹음 공유 결과를 판정하는 파일이 아닙니다.
 
 두 APK는 같은 `com.daytone.app.qa` 패키지를 사용하므로 한 기기에 함께 설치할 수 없습니다. 나중에 설치한 판이 앞선 판을 덮어쓰며 저장값과 권한이 이어질 수 있습니다.
 
-`?v=3af5e68`, `?v=bd3270f`은 브라우저 캐시를 구분하는 값입니다. 실제 빌드 식별값·파일 크기·SHA-256은 각 `빌드 정보` JSON을 기준으로 확인합니다.
+`?v=f4ae003`, `?v=bd3270f`은 브라우저 캐시를 구분하는 값입니다. 실제 빌드 식별값·파일 크기·SHA-256은 각 `빌드 정보` JSON을 기준으로 확인합니다.
 
 ## 메이플 에코 : 블록 매치 퍼즐
 
